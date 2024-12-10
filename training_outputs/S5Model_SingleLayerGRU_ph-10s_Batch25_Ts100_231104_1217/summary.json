@@ -1,0 +1,56 @@
+{
+    "model_summary": "   | Name                     | Type                    | Params\n----------------------------------------------------------------------\n0  | obsv                     | S5Model                 | 201   \n1  | obsv.layers              | ModuleList              | 201   \n2  | obsv.layers.0            | S5Layer                 | 201   \n3  | obsv.layers.0.batch_norm | TransposableBatchNorm1d | 0     \n4  | obsv.layers.0.cell       | S5Cell                  | 177   \n5  | obsv.layers.0.activation | GELU                    | 0     \n6  | obsv.layers.0.skip       | Linear                  | 24    \n7  | model                    | SingleLayerGRU          | 249   \n8  | model.out                | Linear                  | 9     \n9  | training_loss            | DecayingMSELoss         | 0     \n10 | val_metric               | DecayingMSELoss         | 0     \n11 | test_metric              | ModuleDict              | 0     \n12 | test_metric.mse          | DecayingMSELoss         | 0     \n13 | test_metric.fit          | FITIndex                | 0     \n14 | train_loss               | DecayingMSELoss         | 0     \n----------------------------------------------------------------------\n450       Trainable params\n0         Non-trainable params\n450       Total params\n0.002     Total estimated model params size (MB)",
+    "final_test_metrics": {
+        "mse": 0.0002024251880357042,
+        "fit": 97.72372436523438
+    },
+    "seconds_per_epoch": 2.7279747471525084,
+    "required_epochs": 1639,
+    "restored_epochs": 6.481967284344137e-05,
+    "training_params": {
+        "batch_size": 25,
+        "lr": 0.0004,
+        "early_stopping_patience": 70,
+        "training_loss": "DecayingMSELoss",
+        "validation_metric": "DecayingMSELoss",
+        "test_metrics": {
+            "mse": "DecayingMSELoss",
+            "fit": "FITIndex"
+        }
+    },
+    "tbptt_params": {
+        "Ts_train": 100,
+        "Ns_train": 1500,
+        "Ts_val": -1,
+        "Ns_val": -1,
+        "context_window": 50
+    },
+    "dataset_name": "ph-10s",
+    "model_params": {
+        "model": "SingleLayerGRU",
+        "N": 8,
+        "in_features": 1,
+        "out_features": 1
+    },
+    "observer_params": {
+        "model": "S5Model",
+        "N": "[16]",
+        "H": "[4]",
+        "in_features": 2,
+        "out_features": 8,
+        "use_parallel_scan": true,
+        "batch_norm": "post-noaffine",
+        "dropout_p": 0.0,
+        "activation": "gelu",
+        "skip_connection": true,
+        "skip_identity": true,
+        "discretization_method": "zoh",
+        "learnable_\u039b": true,
+        "learnable_eig_scale": true,
+        "learnable_eig_rot": false,
+        "initial_eig_scale": 0.55,
+        "initial_eig_phase": 0.0,
+        "phase_max": 30.0
+    },
+    "observer_num_trainable_params": 201
+}

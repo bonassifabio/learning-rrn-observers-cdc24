@@ -1,0 +1,42 @@
+{
+    "model_summary": "  | Name            | Type            | Params\n----------------------------------------------------\n0 | obsv            | SingleLayerGRU  | 1.0 K \n1 | obsv.out        | Linear          | 136   \n2 | model           | SingleLayerGRU  | 249   \n3 | model.out       | Linear          | 9     \n4 | training_loss   | DecayingMSELoss | 0     \n5 | val_metric      | DecayingMSELoss | 0     \n6 | test_metric     | ModuleDict      | 0     \n7 | test_metric.mse | DecayingMSELoss | 0     \n8 | test_metric.fit | FITIndex        | 0     \n9 | train_loss      | DecayingMSELoss | 0     \n----------------------------------------------------\n1.3 K     Trainable params\n0         Non-trainable params\n1.3 K     Total params\n0.005     Total estimated model params size (MB)",
+    "final_test_metrics": {
+        "mse": 0.00030790723394602537,
+        "fit": 97.19688415527344
+    },
+    "seconds_per_epoch": 2.460685950649986,
+    "required_epochs": 320,
+    "restored_epochs": 0.0004483763186726719,
+    "training_params": {
+        "batch_size": 50,
+        "lr": 0.0004,
+        "early_stopping_patience": 70,
+        "training_loss": "DecayingMSELoss",
+        "validation_metric": "DecayingMSELoss",
+        "test_metrics": {
+            "mse": "DecayingMSELoss",
+            "fit": "FITIndex"
+        }
+    },
+    "tbptt_params": {
+        "Ts_train": 100,
+        "Ns_train": 1500,
+        "Ts_val": -1,
+        "Ns_val": -1,
+        "context_window": 150
+    },
+    "dataset_name": "ph-10s",
+    "model_params": {
+        "model": "SingleLayerGRU",
+        "N": 8,
+        "in_features": 1,
+        "out_features": 1
+    },
+    "observer_params": {
+        "model": "SingleLayerGRU",
+        "N": 16,
+        "in_features": 2,
+        "out_features": 8
+    },
+    "observer_num_trainable_params": 1048
+}
